@@ -35,5 +35,4 @@ No necesitas instalar Maven manualmente en tu sistema, el proyecto incluye un **
 ## 🌐 Endpoints Disponibles (Pruebas)
 
 Una vez que el servidor esté corriendo en el puerto 8080, puedes acceder a:
-- **Endpoint de prueba (JSON):** [http://localhost:8080/api/test](http://localhost:8080/api/test)
 - **Documentación de Swagger (Interfaz Gráfica):** [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
