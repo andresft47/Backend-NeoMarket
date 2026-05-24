@@ -2,7 +2,7 @@ package com.neomarket.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 public class ClienteRegistroDTO {
 
@@ -19,7 +19,7 @@ public class ClienteRegistroDTO {
     private String telefono;
 
     @NotBlank(message = "La contraseña es requerida")
-    @Pattern(regexp = "^\\d{6}$", message = "La contraseña debe ser de 6 dígitos numéricos")
+    @Size(min = 6, message = "La contraseña debe tener al menos 6 caracteres")
     private String password;
 
     public String getNombre() { return nombre; }
