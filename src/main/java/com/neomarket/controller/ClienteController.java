@@ -1,8 +1,11 @@
 package com.neomarket.controller;
 
+import com.neomarket.dto.ClienteLoginDTO;
+import com.neomarket.dto.ClienteRegistroDTO;
 import com.neomarket.model.Cliente;
 import com.neomarket.service.ClienteService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,9 +31,14 @@ public class ClienteController {
         return service.buscar(q);
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<Cliente> login(@Valid @RequestBody ClienteLoginDTO dto) {
+        return ResponseEntity.ok(service.login(dto));
+    }
+
     @PostMapping
-    public ResponseEntity<Cliente> create(@RequestBody Cliente c) {
-        return ResponseEntity.ok(service.save(c));
+    public ResponseEntity<Cliente> create(@Valid @RequestBody ClienteRegistroDTO dto) {
+        return ResponseEntity.ok(service.registrar(dto));
     }
 
     @PutMapping("/{id}")
