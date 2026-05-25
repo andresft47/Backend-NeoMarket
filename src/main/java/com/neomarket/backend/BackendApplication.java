@@ -11,7 +11,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
     "com.neomarket.backend",
     "com.neomarket.controller",
     "com.neomarket.service",
-    "com.neomarket.config"
+    "com.neomarket.config",
+    "com.neomarket.util",
+    "com.neomarket.exception"
 })
 @EntityScan(basePackages = "com.neomarket.model")
 @EnableJpaRepositories(basePackages = "com.neomarket.repository")
