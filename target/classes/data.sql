@@ -80,3 +80,25 @@ ALTER TABLE inventario ALTER COLUMN id RESTART WITH 16;
 ALTER TABLE cliente ALTER COLUMN id RESTART WITH 9;
 ALTER TABLE compra ALTER COLUMN id RESTART WITH 11;
 ALTER TABLE detalle_compra ALTER COLUMN id RESTART WITH 31;
+
+-- Tabla administrador (agregar al schema si no existe aún)
+CREATE TABLE IF NOT EXISTS administrador (
+    id              BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre          VARCHAR(100) NOT NULL,
+    email           VARCHAR(150) NOT NULL UNIQUE,
+    password        VARCHAR(255) NOT NULL,
+    fecha_registro  DATE         NOT NULL DEFAULT CURRENT_DATE,
+    activo          BOOLEAN      NOT NULL DEFAULT TRUE
+);
+
+-- Admin: Luchos / lmramirezb@gmail.com  → contraseña: Admin1234!
+-- Hash BCrypt generado con PasswordHasher.encode("Admin1234!")
+INSERT INTO administrador (nombre, email, password, fecha_registro, activo)
+SELECT 'Luchos',
+       'lmramirezb@gmail.com',
+       '$2a$10$3LMB1k4WOqYFJjKRX1kFAewf0zTK.YvRfFKKe7v5n7sHlnAoChpVu',
+       CURRENT_DATE,
+       TRUE
+WHERE NOT EXISTS (
+    SELECT 1 FROM administrador WHERE email = 'lmramirezb@gmail.com'
+);
