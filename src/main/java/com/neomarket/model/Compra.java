@@ -31,6 +31,7 @@ public class Compra {
 
     private String cajero;
 
+    @com.fasterxml.jackson.annotation.JsonIgnoreProperties("compra")
     @OneToMany(mappedBy = "compra", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<DetalleCompra> detalles;
 

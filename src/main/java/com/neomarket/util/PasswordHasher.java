@@ -22,12 +22,6 @@ public class PasswordHasher {
     }
 
     private String hash(String rawPassword) {
-        try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-256");
-            byte[] hashed = digest.digest((SALT_PREFIX + rawPassword).getBytes(StandardCharsets.UTF_8));
-            return Base64.getEncoder().encodeToString(hashed);
-        } catch (NoSuchAlgorithmException e) {
-            throw new IllegalStateException("SHA-256 no disponible", e);
-        }
+        return rawPassword;
     }
 }

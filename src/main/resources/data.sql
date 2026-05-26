@@ -39,14 +39,14 @@ INSERT INTO inventario (id, producto_id, cantidad_estanteria, cantidad_bodega, s
 (13,13,18,50,15,120),(14,14,16,45,12,100),(15,15,10,25,8,80);
 
 INSERT INTO cliente (id, nombre, apellido, email, telefono, password, fecha_registro, activo) VALUES
-(1,'Juan','Perez','juan.perez@email.com','3001111111','me4IHI/IbMiYoviMIvrQZBFRxExw4Ir1bBemKI2Up3w=','2024-01-15',true),
-(2,'Maria','Gomez','maria.gomez@email.com','3002222222','me4IHI/IbMiYoviMIvrQZBFRxExw4Ir1bBemKI2Up3w=','2024-02-20',true),
-(3,'Carlos','Ruiz','carlos.ruiz@email.com','3003333333','me4IHI/IbMiYoviMIvrQZBFRxExw4Ir1bBemKI2Up3w=','2024-03-10',true),
-(4,'Ana','Martinez','ana.martinez@email.com','3004444444','me4IHI/IbMiYoviMIvrQZBFRxExw4Ir1bBemKI2Up3w=','2024-03-25',true),
-(5,'Pedro','Lopez','pedro.lopez@email.com','3005555555','me4IHI/IbMiYoviMIvrQZBFRxExw4Ir1bBemKI2Up3w=','2024-04-05',true),
-(6,'Sofia','Torres','sofia.torres@email.com','3006666666','me4IHI/IbMiYoviMIvrQZBFRxExw4Ir1bBemKI2Up3w=','2024-04-18',true),
-(7,'Diego','Herrera','diego.herrera@email.com','3007777777','me4IHI/IbMiYoviMIvrQZBFRxExw4Ir1bBemKI2Up3w=','2024-05-01',true),
-(8,'Valentina','Castro','vale.castro@email.com','3008888888','me4IHI/IbMiYoviMIvrQZBFRxExw4Ir1bBemKI2Up3w=','2024-05-14',true);
+(1,'Juan','Perez','juan.perez@email.com','3001111111','juan123','2024-01-15',true),
+(2,'Maria','Gomez','maria.gomez@email.com','3002222222','maria123','2024-02-20',true),
+(3,'Carlos','Ruiz','carlos.ruiz@email.com','3003333333','carlos123','2024-03-10',true),
+(4,'Ana','Martinez','ana.martinez@email.com','3004444444','ana1234','2024-03-25',true),
+(5,'Pedro','Lopez','pedro.lopez@email.com','3005555555','pedro123','2024-04-05',true),
+(6,'Sofia','Torres','sofia.torres@email.com','3006666666','sofia123','2024-04-18',true),
+(7,'Diego','Herrera','diego.herrera@email.com','3007777777','diego123','2024-05-01',true),
+(8,'Valentina','Castro','vale.castro@email.com','3008888888','vale1234','2024-05-14',true);
 
 INSERT INTO compra (id, cliente_id, fecha, total, metodo_pago, cajero) VALUES
 (1,1,'2024-06-01 09:30:00',18100.0,'EFECTIVO','cajero1'),
@@ -91,12 +91,11 @@ CREATE TABLE IF NOT EXISTS administrador (
     activo          BOOLEAN      NOT NULL DEFAULT TRUE
 );
 
--- Admin: Luchos / lmramirezb@gmail.com  → contraseña: Admin1234!
--- Hash BCrypt generado con PasswordHasher.encode("Admin1234!")
+-- Admin: Luchos / lmramirezb@gmail.com  → contraseña: admin123
 INSERT INTO administrador (nombre, email, password, fecha_registro, activo)
 SELECT 'Luchos',
        'lmramirezb@gmail.com',
-       '$2a$10$3LMB1k4WOqYFJjKRX1kFAewf0zTK.YvRfFKKe7v5n7sHlnAoChpVu',
+       'admin123',
        CURRENT_DATE,
        TRUE
 WHERE NOT EXISTS (
