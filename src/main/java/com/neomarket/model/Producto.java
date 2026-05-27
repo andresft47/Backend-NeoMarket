@@ -24,6 +24,9 @@ public class Producto {
     @Column(name = "codigo_barras", unique = true)
     private String codigoBarras;
 
+    @Column(length = 500)
+    private String imagen;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;

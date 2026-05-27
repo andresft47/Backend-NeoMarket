@@ -14,22 +14,22 @@ INSERT INTO proveedor (id, nombre, contacto, telefono, email, activo) VALUES
 (4, 'Panaderia La Espiga',   'Maria Lopez',   '3154321098', 'maria@laespiga.com',           true),
 (5, 'Bebidas Andinas',       'Pedro Ramirez', '3008765432', 'pedro@bebidasandinas.com',     true);
 
-INSERT INTO producto (id, nombre, descripcion, precio, codigo_barras, categoria_id, proveedor_id, activo) VALUES
-(1,  'Leche Entera 1L',      'Leche pasteurizada 1L',       2800.0,  '7702001001', 1, 1, true),
-(2,  'Queso Campesino 500g', 'Queso fresco campesino 500g', 8500.0,  '7702001002', 1, 1, true),
-(3,  'Yogur Natural 200g',   'Yogur natural 200g',          3200.0,  '7702001003', 1, 1, true),
-(4,  'Pechuga de Pollo 1kg', 'Pechuga fresca 1kg',         12000.0,  '7702002001', 2, 2, true),
-(5,  'Carne Molida 500g',    'Carne molida res 500g',       9500.0,  '7702002002', 2, 2, true),
-(6,  'Tomate kg',            'Tomate chonto x kg',          3500.0,  '7702003001', 3, 3, true),
-(7,  'Cebolla kg',           'Cebolla cabezona 1kg',        2800.0,  '7702003002', 3, 3, true),
-(8,  'Manzana x6',           'Manzanas rojas paquete x6',   5500.0,  '7702003003', 3, 3, true),
-(9,  'Pan Tajado',           'Pan tajado grande 500g',      3800.0,  '7702004001', 4, 4, true),
-(10, 'Galletas Soda x3',     'Galletas soda paquete x3',    4200.0,  '7702004002', 4, 4, true),
-(11, 'Jugo Naranja 1L',      'Jugo de naranja 1L',          4500.0,  '7702005001', 5, 5, true),
-(12, 'Agua Mineral 600ml',   'Agua mineral 600ml',          1800.0,  '7702005002', 5, 5, true),
-(13, 'Gaseosa 2L',           'Gaseosa cola 2L',             5800.0,  '7702005003', 5, 5, true),
-(14, 'Jabon Rey 500g',       'Jabon en polvo 500g',         6500.0,  '7702006001', 6, 3, true),
-(15, 'Shampoo 400ml',        'Shampoo 400ml',              12500.0,  '7702007001', 7, 3, true);
+INSERT INTO producto (id, nombre, descripcion, precio, codigo_barras, imagen, categoria_id, proveedor_id, activo) VALUES
+(1,  'Leche Entera 1L',      'Leche pasteurizada 1L',       2800.0,  '7702001001', 'https://images.unsplash.com/photo-1563636619-e9143da7973b?w=500&q=80', 1, 1, true),
+(2,  'Queso Campesino 500g', 'Queso fresco campesino 500g', 8500.0,  '7702001002', 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=500&q=80', 1, 1, true),
+(3,  'Yogur Natural 200g',   'Yogur natural 200g',          3200.0,  '7702001003', 'https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&w=800', 1, 1, true),
+(4,  'Pechuga de Pollo 1kg', 'Pechuga fresca 1kg',         12000.0,  '7702002001', 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=500&q=80', 2, 2, true),
+(5,  'Carne Molida 500g',    'Carne molida res 500g',       9500.0,  '7702002002', 'https://images.pexels.com/photos/65175/pexels-photo-65175.jpeg?auto=compress&cs=tinysrgb&w=800', 2, 2, true),
+(6,  'Tomate kg',            'Tomate chonto x kg',          3500.0,  '7702003001', 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=500&q=80', 3, 3, true),
+(7,  'Cebolla kg',           'Cebolla cabezona 1kg',        2800.0,  '7702003002', 'https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?w=500&q=80', 3, 3, true),
+(8,  'Manzana x6',           'Manzanas rojas paquete x6',   5500.0,  '7702003003', 'https://images.pexels.com/photos/102104/pexels-photo-102104.jpeg?auto=compress&cs=tinysrgb&w=800', 3, 3, true),
+(9,  'Pan Tajado',           'Pan tajado grande 500g',      3800.0,  '7702004001', 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&q=80', 4, 4, true),
+(10, 'Galletas Soda x3',     'Galletas soda paquete x3',    4200.0,  '7702004002', 'https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg?auto=compress&cs=tinysrgb&w=800', 4, 4, true),
+(11, 'Jugo Naranja 1L',      'Jugo de naranja 1L',          4500.0,  '7702005001', 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=500&q=80', 5, 5, true),
+(12, 'Agua Mineral 600ml',   'Agua mineral 600ml',          1800.0,  '7702005002', 'https://images.pexels.com/photos/327090/pexels-photo-327090.jpeg?auto=compress&cs=tinysrgb&w=800', 5, 5, true),
+(13, 'Gaseosa 2L',           'Gaseosa cola 2L',             5800.0,  '7702005003', 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&q=80', 5, 5, true),
+(14, 'Jabon Rey 500g',       'Jabon en polvo 500g',         6500.0,  '7702006001', 'https://images.pexels.com/photos/4239013/pexels-photo-4239013.jpeg?auto=compress&cs=tinysrgb&w=800', 6, 3, true),
+(15, 'Shampoo 400ml',        'Shampoo 400ml',              12500.0,  '7702007001', 'https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=500&q=80', 7, 3, true);
 
 INSERT INTO inventario (id, producto_id, cantidad_estanteria, cantidad_bodega, stock_minimo, stock_maximo) VALUES
 (1,1,25,80,20,200),(2,2,15,40,10,100),(3,3,20,60,15,150),
