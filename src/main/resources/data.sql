@@ -101,3 +101,21 @@ SELECT 'Luchos',
 WHERE NOT EXISTS (
     SELECT 1 FROM administrador WHERE email = 'lmramirezb@gmail.com'
 );
+
+-- Solo necesario si ddl-auto=none/validate
+-- Con create-drop Hibernate la crea automáticamente desde la entidad
+CREATE TABLE IF NOT EXISTS pedido_proveedor (
+    id                        BIGINT AUTO_INCREMENT PRIMARY KEY,
+    producto_id               BIGINT       NOT NULL,
+    proveedor_id              BIGINT       NOT NULL,
+    cantidad_solicitada       INT          NOT NULL,
+    precio_unitario_proveedor DOUBLE       NOT NULL,
+    total_pedido              DOUBLE       NOT NULL,
+    fecha                     TIMESTAMP    NOT NULL,
+    estado                    VARCHAR(20)  NOT NULL DEFAULT 'REALIZADO',
+    nivel_demanda             VARCHAR(10)  NOT NULL,
+    motivo                    VARCHAR(500),
+    CONSTRAINT fk_ped_producto  FOREIGN KEY (producto_id)  REFERENCES producto(id),
+    CONSTRAINT fk_ped_proveedor FOREIGN KEY (proveedor_id) REFERENCES proveedor(id)
+);
+ALTER TABLE pedido_proveedor ALTER COLUMN id RESTART WITH 1;
